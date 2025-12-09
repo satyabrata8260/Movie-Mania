@@ -41,21 +41,60 @@ a { text-decoration: none; color: inherit; }
 .navbar button:hover { background-color: #b00610; }
 
 /* Hero Banner */
-.hero { position: relative; height: 80vh; overflow: hidden; }
-.hero-video {
-  position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
 }
+
+.hero-video {
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* z-index: -1;
+  overflow: hidden; */
+}
+
+/* Background trailer video iframe */
+.hero-video-iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* disables click on video */
+}
+
+/* Fallback image if trailer is unavailable */
+.hero-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-overlay {
-  position: absolute; bottom: 30px; left: 40px; max-width: 600px;
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  max-width: 600px;
   color: white;
   background: linear-gradient(to top, #0b0b0b 30%, transparent 70%);
-  padding: 20px; border-radius: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10;
 }
+
 .hero-overlay h1 { font-size: 48px; margin-bottom: 20px; }
 .hero-overlay p { font-size: 16px; margin-bottom: 20px; line-height: 1.5; }
 .hero-overlay button {
-  padding: 10px 20px; margin-right: 10px; background-color: #e50914;
-  border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .hero-overlay button:hover { background-color: #b00610; }
 
@@ -100,3 +139,14 @@ a { text-decoration: none; color: inherit; }
 .movie-details-content { max-width: 600px; }
 .movie-details-content h1 { font-size: 36px; margin-bottom: 15px; }
 .movie-details-content p { font-size: 16px; margin-bottom: 10px; }
+
+
+/* Fade in effect */
+.fade-in {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
